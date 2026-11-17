@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=2" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -39,38 +39,28 @@
   </script>
 </head>
 <body>
-  <!-- Animated background layers -->
   <div class="bg-grid" aria-hidden="true"></div>
-  <div class="bg-orbs" aria-hidden="true">
-    <span class="orb orb-1"></span>
-    <span class="orb orb-2"></span>
-    <span class="orb orb-3"></span>
-  </div>
+  <div class="bg-orbs" aria-hidden="true"><span class="orb orb-1"></span><span class="orb orb-2"></span><span class="orb orb-3"></span></div>
   <canvas id="particles" aria-hidden="true"></canvas>
 
   <!-- Navbar -->
   <header class="nav" id="nav">
-    <a href="#home" class="brand">
+    <a href="index.html" class="brand">
       <span class="brand-mark">
         <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
           <path d="M16 2 L28 9 V23 L16 30 L4 23 V9 Z" fill="none" stroke="url(#g1)" stroke-width="1.6"/>
           <path d="M11 21 V12 L21 21 V12" fill="none" stroke="url(#g1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <defs>
-            <linearGradient id="g1" x1="0" y1="0" x2="32" y2="32">
-              <stop offset="0" stop-color="#38f9d7"/><stop offset="1" stop-color="#7b6cff"/>
-            </linearGradient>
-          </defs>
+          <defs><linearGradient id="g1" x1="0" y1="0" x2="32" y2="32"><stop offset="0" stop-color="#38f9d7"/><stop offset="1" stop-color="#7b6cff"/></linearGradient></defs>
         </svg>
       </span>
       <span class="brand-name">NRI<span>Gateway</span></span>
     </a>
     <nav class="nav-links" id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#founder">Founder</a>
-      <a href="#services">Services</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#contact" class="nav-cta">Contact</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="founder.html">Founder</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </header>
@@ -79,9 +69,7 @@
   <section class="hero" id="home">
     <div class="hero-inner">
       <span class="eyebrow">✦ Serving NRIs across the USA &amp; the world</span>
-      <h1 class="hero-title">
-        Bridging Worlds,<br /><span class="grad-text">Enriching Lives.</span>
-      </h1>
+      <h1 class="hero-title">Bridging Worlds,<br /><span class="grad-text">Enriching Lives.</span></h1>
       <p class="hero-sub">
         Your one trusted partner in India for <strong>property</strong>, <strong>immigration</strong>,
         <strong>parental care</strong>, <strong>documents</strong>, <strong>education</strong>, <strong>legal</strong>,
@@ -89,8 +77,8 @@
         people you love — <em>we truly care about your family.</em>
       </p>
       <div class="hero-actions">
-        <a href="#services" class="btn btn-primary">Explore Services <span>→</span></a>
-        <a href="#contact" class="btn btn-ghost">Talk to us</a>
+        <a href="services.html" class="btn btn-primary">Explore Services <span>→</span></a>
+        <a href="contact.html" class="btn btn-ghost">Talk to us</a>
       </div>
       <div class="hero-stats">
         <div><b data-count="8">0</b><span>Service categories</span></div>
@@ -102,411 +90,77 @@
     <div class="hero-scroll" aria-hidden="true"><span></span>Scroll</div>
   </section>
 
-  <!-- About -->
-  <section class="section" id="about">
+  <!-- Services preview -->
+  <section class="section" id="services-preview">
     <div class="section-head">
-      <span class="tag">01 — Who we are</span>
-      <h2>A single trusted partner for everything you can't do from abroad</h2>
+      <span class="tag">What we do</span>
+      <h2>Eight ways we take care of home</h2>
+      <p class="section-lead">One partner for everything you can't do from abroad. Tap any area to see the full offering.</p>
     </div>
-    <figure class="media-banner">
-      <img src="images/family-sunset.jpg" alt="A large family holding hands together at sunset" loading="lazy" onerror="this.style.display='none'" />
-      <figcaption>
-        <h3>Family is the reason we exist</h3>
-        <p>No matter the ocean between you, we keep your loved ones close and cared for.</p>
-      </figcaption>
-    </figure>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>
-          <strong>NRI Gateway is a service provider for the NRI community.</strong> We are committed to bridging
-          the gap between Non-Resident Indians and their roots. Leveraging decades of expertise, we have tailored
-          a spectrum of services that cater to the diverse needs of the global Indian community.
-        </p>
-        <p>
-          Our offerings span property, financial and legal assistance, immigration, parental care, education and
-          personalized concierge services — all designed to make the overseas experience seamless and connected.
-          Understanding the challenges faced by NRIs, we employ a network of seasoned professionals to deliver
-          solutions that are both efficient and empathetic.
-        </p>
-        <p>
-          In a world where geographical boundaries are becoming irrelevant, NRI Gateway stands as a trusted
-          partner, succeeding in forging real human connections. <em>Your needs, our solutions.</em>
-        </p>
-        <ul class="check-list">
-          <li>A network of seasoned, verified professionals</li>
-          <li>Efficient and empathetic, every step of the way</li>
-          <li>Real-time updates with a single point of contact</li>
-          <li>Your pathway to peace of mind and prosperity</li>
-        </ul>
+    <div class="svc-preview">
+      <a href="services.html" class="glass">
+        <span class="pv-ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg></span>
+        <h4>Property Management</h4><p>Buy, sell, rent, maintain &amp; monitor.</p>
+      </a>
+      <a href="services.html" class="glass">
+        <span class="pv-ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 10-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span>
+        <h4>Parental Care</h4><p>Health, home care &amp; companionship.</p>
+      </a>
+      <a href="services.html" class="glass">
+        <span class="pv-ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg></span>
+        <h4>Immigration</h4><p>PIO, OCI, attestation &amp; visas.</p>
+      </a>
+      <a href="services.html" class="glass">
+        <span class="pv-ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8M8 9h2"/></svg></span>
+        <h4>Document Procurement</h4><p>Certificates, PAN &amp; records.</p>
+      </a>
+      <a href="services.html" class="glass">
+        <span class="pv-ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/><path d="M22 10v6"/></svg></span>
+        <h4>Education in India</h4><p>Admissions, fees &amp; monitoring.</p>
+      </a>
+      <a href="services.html" class="glass">
+        <span class="pv-ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 8-8 11-4.5-3-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <h4>Legal &amp; Insurance</h4><p>Attestation, cover &amp; counsel.</p>
+      </a>
+      <a href="services.html" class="glass">
+        <span class="pv-ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5a2.1 2.1 0 00-3-3L13 8 4.8 6.2a1 1 0 00-.9 1.7L9 11l-2 3H4l-1 2 3 1 1 3 2-1v-3l3-2 3.1 5.1a1 1 0 001.7-.9z"/></svg></span>
+        <h4>Tours &amp; Travel</h4><p>Tickets, stays &amp; itineraries.</p>
+      </a>
+      <a href="services.html" class="glass">
+        <span class="pv-ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8l-9-5-9 5v8l9 5 9-5z"/><path d="M3.3 7 12 12l8.7-5M12 22V12"/></svg></span>
+        <h4>Packaging &amp; Courier</h4><p>Shipping &amp; personal shopping.</p>
+      </a>
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="services.html" class="btn btn-primary">See all services in detail <span>→</span></a>
+    </div>
+  </section>
+
+  <!-- Home about teaser -->
+  <section class="section">
+    <div class="home-about">
+      <div class="ha-text">
+        <span class="tag">Who we are</span>
+        <h2>A trusted partner, bridging you and your roots</h2>
+        <p>NRI Gateway is a service provider for the NRI community, committed to bridging the gap between
+          Non-Resident Indians and their roots. Leveraging decades of expertise, we deliver solutions that are
+          both efficient and empathetic — forging real human connections across every border.</p>
+        <a href="about.html" class="btn btn-ghost">More about us <span>→</span></a>
       </div>
-      <div class="about-card glass">
-        <div class="pulse-ring"></div>
-        <img class="about-card-img" src="images/care-hands-flower.jpg" alt="Open hands gently holding a flower" loading="lazy" onerror="this.style.display='none'" />
-        <h3>“We do truly care about your family.”</h3>
-        <p>That isn't a slogan — it's the standard we hold every service to. From a routine health check for your
-          parents to a critical document attestation, we treat your requests as if they were our own.</p>
-        <div class="about-signature">— Team NRI Gateway</div>
-      </div>
+      <figure class="media-banner" style="margin:0; aspect-ratio:4/3;">
+        <img src="images/family-sunset.jpg" alt="A large family holding hands together at sunset" loading="lazy" onerror="this.style.display='none'" />
+        <figcaption><h3>We truly care about your family</h3><p>Your needs, our solutions.</p></figcaption>
+      </figure>
     </div>
   </section>
 
-  <!-- Founder -->
-  <section class="section" id="founder">
-    <div class="section-head">
-      <span class="tag">02 — Meet the founder</span>
-      <h2>Three decades of expertise, a world of experience</h2>
-      <p class="section-lead">NRI Gateway is led by a seasoned professional who has lived the global journey first-hand.</p>
-    </div>
-    <div class="founder-grid">
-      <div class="founder-card glass">
-        <div class="founder-avatar">MT</div>
-        <h3>Murali Timmaraju</h3>
-        <p class="founder-role">Founder, NRI Gateway</p>
-        <div class="founder-block">
-          <h4>Education</h4>
-          <ul>
-            <li>B.E. in Mechanical Engineering — RV College of Engineering (1981)</li>
-            <li>MBA — College of Notre Dame, USA</li>
-          </ul>
-        </div>
-        <div class="founder-block">
-          <h4>Expertise</h4>
-          <div class="chips">
-            <span>Agile &amp; Project Management</span>
-            <span>Team Leadership</span>
-            <span>Talent Management</span>
-          </div>
-        </div>
-      </div>
-      <div class="founder-side">
-        <figure class="media-banner">
-          <img src="images/travel-journey.jpg" alt="An open road winding through a dramatic landscape" loading="lazy" onerror="this.style.display='none'" />
-          <figcaption>
-            <h3>35+ countries, every continent</h3>
-            <p>From the markets of Baghdad to the temples of India, the Himalayas to the Northern Lights — a lifetime of travel that makes the NRI journey deeply personal.</p>
-          </figcaption>
-        </figure>
-        <div class="founder-why glass">
-          <h4>Why choose me</h4>
-          <p>“Choosing me as your guide for NRI services means a dedicated professional who combines expertise,
-            personalized attention and a client-centric approach — to ensure your peace of mind as you navigate
-            life abroad. Let's turn challenges into opportunities, together.”</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section class="section" id="services">
-    <div class="section-head">
-      <span class="tag">03 — What we do</span>
-      <h2>Everything you can't do from abroad, handled in India</h2>
-      <p class="section-lead">Eight end-to-end service families, delivered by our local team so nothing falls through the cracks.</p>
-    </div>
-
-    <div class="services-grid">
-      <!-- Property Management -->
-      <article class="svc-card glass" data-tilt>
-        <div class="svc-media">
-          <img src="images/property-management.jpg" alt="A model house with keys" loading="lazy" onerror="this.style.display='none'" />
-        </div>
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
-        </div>
-        <h3>Property Management</h3>
-        <p class="svc-desc">Buy, sell, rent, maintain and monitor your property in India — with a trusted local presence.</p>
-        <ul>
-          <li>Buying &amp; Selling Assistance</li>
-          <li>Property Upkeep &amp; Maintenance</li>
-          <li>On-ground Monitoring &amp; Inspections</li>
-          <li>Rental Agreement Services</li>
-        </ul>
-      </article>
-
-      <!-- Parental Care (featured) -->
-      <article class="svc-card glass featured" data-tilt>
-        <span class="svc-badge">Most requested</span>
-        <div class="svc-media">
-          <img src="images/parental-care-doctor.jpg" alt="Doctor providing medical care" loading="lazy" onerror="this.style.display='none'" />
-        </div>
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 10-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg>
-        </div>
-        <h3>Parental Care</h3>
-        <p class="svc-desc">Compassionate, reliable care for your parents while you're away — our proudest work.</p>
-        <ul>
-          <li>Scheduled Health Check Visits</li>
-          <li>Home Health Assistance</li>
-          <li>Medical Consultation &amp; Telemedicine</li>
-          <li>Medicine Delivery</li>
-          <li>Laboratory &amp; Diagnostic Services</li>
-          <li>Companionship &amp; Emotional Support</li>
-        </ul>
-      </article>
-
-      <!-- Immigration -->
-      <article class="svc-card glass" data-tilt>
-        <div class="svc-media">
-          <img src="images/immigration-documents.jpg" alt="Signing official documents" loading="lazy" onerror="this.style.display='none'" />
-        </div>
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
-        </div>
-        <h3>Immigration Services</h3>
-        <p class="svc-desc">Navigate Indian &amp; international immigration processes without the paperwork headache.</p>
-        <ul>
-          <li>PIO — Person of Indian Origin</li>
-          <li>OCI — Overseas Citizen of India</li>
-          <li>Document Attestation</li>
-          <li>Visa Extension</li>
-          <li>Certified Translation Services</li>
-          <li>Foreigners Regional (FRRO) Services</li>
-        </ul>
-      </article>
-
-      <!-- Document Procurement -->
-      <article class="svc-card glass" data-tilt>
-        <div class="svc-media">
-          <img src="images/document-procurement.jpg" alt="Official paperwork and forms" loading="lazy" onerror="this.style.display='none'" />
-        </div>
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8M8 9h2"/></svg>
-        </div>
-        <h3>Document Procurement</h3>
-        <p class="svc-desc">We obtain and deliver official Indian records, wherever your journey has taken you.</p>
-        <ul>
-          <li>Birth, Death &amp; Marriage Certificates</li>
-          <li>Domicile Certificate</li>
-          <li>Degree Certificate &amp; Syllabus Copy</li>
-          <li>PAN Card</li>
-          <li>Reference Letters</li>
-          <li>Non-Availability of Birth Certificate</li>
-        </ul>
-      </article>
-
-      <!-- Education -->
-      <article class="svc-card glass" data-tilt>
-        <div class="svc-media">
-          <img src="images/education-children.jpg" alt="Happy children smiling together" loading="lazy" onerror="this.style.display='none'" />
-        </div>
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/><path d="M22 10v6"/></svg>
-        </div>
-        <h3>Education in India</h3>
-        <p class="svc-desc">Keep your child's schooling on track — enrolment to exam results — from anywhere.</p>
-        <ul>
-          <li>School Admission &amp; Board Guidance</li>
-          <li>Fee Payment — school, college, boarding, coaching</li>
-          <li>Student Progress Monitoring</li>
-          <li>Academic Performance Monitoring</li>
-        </ul>
-      </article>
-
-      <!-- Legal & Insurance -->
-      <article class="svc-card glass" data-tilt>
-        <div class="svc-media">
-          <img src="images/legal-insurance.jpg" alt="Statue of Lady Justice holding scales" loading="lazy" onerror="this.style.display='none'" />
-        </div>
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 8-8 11-4.5-3-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg>
-        </div>
-        <h3>Legal &amp; Insurance</h3>
-        <p class="svc-desc">Authentication, representation and the right cover — handled to Indian &amp; global standards.</p>
-        <ul>
-          <li>Legalization, Notarization &amp; Attestation</li>
-          <li>Court Visit Representation</li>
-          <li>Life, General &amp; Medical Insurance</li>
-          <li>All Types of Vehicle Insurance</li>
-          <li>Lawyer &amp; Legal Opinion</li>
-        </ul>
-      </article>
-
-      <!-- Tours & Travel -->
-      <article class="svc-card glass" data-tilt>
-        <div class="svc-media">
-          <img src="images/tours-travel.jpg" alt="Airplane wing above the clouds at sunset" loading="lazy" onerror="this.style.display='none'" />
-        </div>
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5a2.1 2.1 0 00-3-3L13 8 4.8 6.2a1 1 0 00-.9 1.7L9 11l-2 3H4l-1 2 3 1 1 3 2-1v-3l3-2 3.1 5.1a1 1 0 001.7-.9z"/></svg>
-        </div>
-        <h3>Tours &amp; Travel</h3>
-        <p class="svc-desc">Tickets, stays and curated itineraries — for a seamless trip home or anywhere else.</p>
-        <ul>
-          <li>Flight, Train &amp; Bus Ticket Booking</li>
-          <li>Curated Tour &amp; Travel Packages</li>
-          <li>Hotel &amp; Stay Reservations</li>
-          <li>Travel Plan Coordination</li>
-          <li>Vehicle Rental</li>
-        </ul>
-      </article>
-
-      <!-- Packaging & Courier -->
-      <article class="svc-card glass" data-tilt>
-        <div class="svc-media">
-          <img src="images/packaging-courier.jpg" alt="A warehouse filled with parcels ready to ship" loading="lazy" onerror="this.style.display='none'" />
-        </div>
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8l-9-5-9 5v8l9 5 9-5z"/><path d="M3.3 7 12 12l8.7-5M12 22V12"/></svg>
-        </div>
-        <h3>Packaging &amp; Courier</h3>
-        <p class="svc-desc">Send anything between India and the world — plus personal shopping, handled for you.</p>
-        <ul>
-          <li>Domestic &amp; International Courier</li>
-          <li>Air Cargo Services</li>
-          <li>Door-to-Door Shipping</li>
-          <li>USA ⇄ India Packaging</li>
-          <li>NRI Personal Shopping</li>
-          <li>Simple Documentation</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <!-- Process -->
-  <section class="section" id="process">
-    <div class="section-head">
-      <span class="tag">04 — How it works</span>
-      <h2>Four simple steps between you and done</h2>
-    </div>
-    <figure class="media-banner">
-      <img src="images/process-consult.jpg" alt="Reviewing progress together on a laptop" loading="lazy" onerror="this.style.display='none'" />
-      <figcaption>
-        <h3>Always in the loop</h3>
-        <p>Real-time updates, photos and reports — you see every step as it happens.</p>
-      </figcaption>
-    </figure>
-    <div class="steps">
-      <div class="step glass"><span class="step-no">01</span><h4>Tell us the task</h4><p>Reach out with what you need — a form, a call, or a message. No task is too small.</p></div>
-      <div class="step glass"><span class="step-no">02</span><h4>We plan &amp; quote</h4><p>You get a clear plan, timeline and transparent price before anything begins.</p></div>
-      <div class="step glass"><span class="step-no">03</span><h4>We execute locally</h4><p>Our verified team on the ground handles every visit, office and follow-up.</p></div>
-      <div class="step glass"><span class="step-no">04</span><h4>You stay updated</h4><p>Real-time updates, photos and reports land in your inbox until it's complete.</p></div>
-    </div>
-  </section>
-
-  <!-- Vision -->
-  <section class="section vision" id="vision">
-    <div class="vision-inner glass">
-      <span class="tag center">05 — Our vision</span>
-      <h2 class="vision-quote">“Empowering Global Connections —<br /><span class="grad-text">Bridging Worlds, Enriching Lives.</span>”</h2>
-      <p>We aim to be the leading NRI services provider — the one gateway every Indian family abroad trusts to
-        care for what matters most back home.</p>
-    </div>
-  </section>
-
-  <!-- Reach / regions -->
-  <section class="section" id="regions">
-    <div class="section-head">
-      <span class="tag">06 — Our reach</span>
-      <h2>Rooted in Bengaluru, serving families across the USA</h2>
-      <p class="section-lead">Clients coordinating with us from communities across America:</p>
-    </div>
-    <figure class="media-banner">
-      <img src="images/india-taj-mahal.jpg" alt="The Taj Mahal in India at dawn" loading="lazy" onerror="this.style.display='none'" />
-      <figcaption>
-        <h3>A home base in India, a reach across the world</h3>
-        <p>From our office in Bengaluru, we handle every task on the ground — so you never have to fly back for paperwork.</p>
-      </figcaption>
-    </figure>
-    <div class="regions">
-      <span class="glass">Pahrump, Nevada</span>
-      <span class="glass">Gold Beach, Oregon</span>
-      <span class="glass">Garden City, Idaho</span>
-      <span class="glass">Fairview, Montana</span>
-      <span class="glass">Jackson, Wyoming</span>
-      <span class="glass">Greeley, Colorado</span>
-    </div>
-  </section>
-
-  <!-- Reviews -->
-  <section class="section" id="reviews">
-    <div class="section-head">
-      <span class="tag">07 — Kind words</span>
-      <h2>Families who trusted us — and would again</h2>
-    </div>
-    <div class="reviews-grid">
-      <blockquote class="glass">
-        <div class="stars">★★★★★</div>
-        <p>“Getting my parents' regular health checks organised from the US always felt impossible. NRI Gateway made
-          it effortless — quick turnaround, genuinely caring people, and fair rates.”</p>
-        <footer>— NRI client, Colorado</footer>
-      </blockquote>
-      <blockquote class="glass">
-        <div class="stars">★★★★★</div>
-        <p>“They handled our OCI documentation and my son's school fee payments in one go. Competitive pricing and
-          they kept me updated every step. Highly recommended.”</p>
-        <footer>— NRI client, Nevada</footer>
-      </blockquote>
-      <blockquote class="glass">
-        <div class="stars">★★★★★</div>
-        <p>“What stood out was how much they truly care. It never felt like a transaction — it felt like family
-          looking after family.”</p>
-        <footer>— NRI client, Oregon</footer>
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="section" id="contact">
-    <div class="section-head">
-      <span class="tag">08 — Get in touch</span>
-      <h2>Let's take care of what's waiting back home</h2>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="ci-item glass">
-          <span class="ci-ico">📍</span>
-          <div>
-            <h4>Visit us in Bengaluru</h4>
-            <p>73/1, 13th Cross Road, Mahalakshmi Layout,<br />Near Panchamukhi Ganapathi Temple, Bovipalya,<br />Nagapura, Bengaluru, Karnataka 560086, India</p>
-          </div>
-        </div>
-        <div class="ci-item glass">
-          <span class="ci-ico">📞</span>
-          <div>
-            <h4>Call us</h4>
-            <p>India: <a href="tel:+917348821565">+91 73488 21565</a><br />USA: <a href="tel:+14109883075">+1 (410) 988 3075</a></p>
-          </div>
-        </div>
-        <div class="ci-item glass">
-          <span class="ci-ico">✉️</span>
-          <div>
-            <h4>Primary contact</h4>
-            <p>Murali Timmaraju<br /><a href="mailto:info@nrigateway.in">info@nrigateway.in</a></p>
-          </div>
-        </div>
-        <a class="map-embed glass" href="https://maps.app.goo.gl/q9APHcg64X1nk1zB8" target="_blank" rel="noopener">
-          <iframe title="NRI Gateway location" src="https://www.google.com/maps?q=13.0082354,77.5432523&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <span class="map-open">Open in Google Maps ↗</span>
-        </a>
-      </div>
-
-      <form class="contact-form glass" id="contactForm" method="POST" action="https://formspree.io/f/YOUR_FORM_ID" novalidate>
-        <h3>Send us a message</h3>
-        <div class="field"><label for="name">Full name</label><input id="name" name="name" type="text" required placeholder="Your name" /></div>
-        <div class="field-row">
-          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="you@email.com" /></div>
-          <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" placeholder="+1 …" /></div>
-        </div>
-        <div class="field">
-          <label for="service">Service needed</label>
-          <select id="service" name="service">
-            <option value="">Select a service…</option>
-            <option>Property Management</option>
-            <option>Parental Care</option>
-            <option>Immigration Services</option>
-            <option>Document Procurement</option>
-            <option>Education in India</option>
-            <option>Legal &amp; Insurance</option>
-            <option>Tours &amp; Travel</option>
-            <option>Packaging &amp; Courier</option>
-            <option>Something else</option>
-          </select>
-        </div>
-        <div class="field"><label for="message">How can we help?</label><textarea id="message" name="message" rows="4" required placeholder="Tell us what you need…"></textarea></div>
-        <label class="agree"><input type="checkbox" id="agree" required /> I agree to the privacy policy and to be contacted about my request.</label>
-        <button type="submit" class="btn btn-primary full">Send message <span>→</span></button>
-        <p class="form-note" id="formNote" role="status"></p>
-      </form>
+  <!-- CTA band -->
+  <section class="cta-band">
+    <div class="cta-inner glass">
+      <div class="pulse-ring"></div>
+      <h2>Something waiting back home?</h2>
+      <p>Tell us the task — no request is too small. You'll get a clear plan, a fair price, and real-time updates until it's done.</p>
+      <a href="contact.html" class="btn btn-primary">Get in touch <span>→</span></a>
     </div>
   </section>
 
@@ -518,26 +172,24 @@
         <p>Bridging worlds, enriching lives. A single trusted partner for property, immigration, parental care, documents, education, legal, travel and courier services — because we truly care about your family.</p>
       </div>
       <div class="footer-col">
-        <h5>Services</h5>
-        <a href="#services">Property Management</a>
-        <a href="#services">Parental Care</a>
-        <a href="#services">Immigration</a>
-        <a href="#services">Documents</a>
-        <a href="#services">Legal &amp; Insurance</a>
-        <a href="#services">Travel &amp; Courier</a>
+        <h5>Explore</h5>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="founder.html">Founder</a>
+        <a href="services.html">Services</a>
       </div>
       <div class="footer-col">
-        <h5>Company</h5>
-        <a href="#about">About</a>
-        <a href="#founder">Founder</a>
-        <a href="#vision">Vision</a>
-        <a href="#reviews">Reviews</a>
+        <h5>Services</h5>
+        <a href="services.html">Property &amp; Parental</a>
+        <a href="services.html">Immigration &amp; Docs</a>
+        <a href="services.html">Legal &amp; Insurance</a>
+        <a href="services.html">Travel &amp; Courier</a>
       </div>
       <div class="footer-col">
         <h5>Contact</h5>
         <a href="tel:+917348821565">+91 73488 21565</a>
         <a href="tel:+14109883075">+1 (410) 988 3075</a>
-        <a href="#contact">Bengaluru, India</a>
+        <a href="contact.html">Bengaluru, India</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -546,6 +198,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>

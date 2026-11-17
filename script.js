@@ -1,29 +1,34 @@
 // ---------- Year ----------
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // ---------- Nav scroll state ----------
 const nav = document.getElementById("nav");
-const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 30);
-onScroll();
-window.addEventListener("scroll", onScroll, { passive: true });
+if (nav) {
+  const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 30);
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+}
 
 // ---------- Mobile menu ----------
 const toggle = document.getElementById("navToggle");
 const links = document.getElementById("navLinks");
-toggle.addEventListener("click", () => {
-  toggle.classList.toggle("open");
-  links.classList.toggle("open");
-});
-links.querySelectorAll("a").forEach((a) =>
-  a.addEventListener("click", () => {
-    toggle.classList.remove("open");
-    links.classList.remove("open");
-  })
-);
+if (toggle && links) {
+  toggle.addEventListener("click", () => {
+    toggle.classList.toggle("open");
+    links.classList.toggle("open");
+  });
+  links.querySelectorAll("a").forEach((a) =>
+    a.addEventListener("click", () => {
+      toggle.classList.remove("open");
+      links.classList.remove("open");
+    })
+  );
+}
 
 // ---------- Reveal on scroll ----------
 const revealEls = document.querySelectorAll(
-  ".section-head, .about-grid, .svc-card, .step, .vision-inner, .regions span, .reviews-grid blockquote, .contact-info, .contact-form"
+  ".section-head, .page-hero, .about-grid, .founder-grid, .svc-card, .svc-preview a, .step, .vision-inner, .regions span, .reviews-grid blockquote, .contact-info, .contact-form, .cta-inner"
 );
 revealEls.forEach((el) => el.classList.add("reveal"));
 const io = new IntersectionObserver(
@@ -67,12 +72,12 @@ counters.forEach((c) => countObserver.observe(c));
 // ---------- Contact form ----------
 const form = document.getElementById("contactForm");
 const note = document.getElementById("formNote");
-const submitBtn = form.querySelector("button[type=submit]");
+const submitBtn = form ? form.querySelector("button[type=submit]") : null;
 
 // Fallback inbox used when the Formspree endpoint hasn't been configured yet.
 const FALLBACK_EMAIL = "info@nrigateway.in";
 
-form.addEventListener("submit", async (e) => {
+if (form) form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const name = form.name.value.trim();
   const email = form.email.value.trim();

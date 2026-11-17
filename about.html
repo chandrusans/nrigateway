@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — NRI Gateway</title>
+  <meta name="description" content="About NRI Gateway — a service provider for the NRI community, bridging Non-Resident Indians and their roots with efficient, empathetic solutions. Our vision, our reach, and what families say." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <meta name="theme-color" content="#05060f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-orbs" aria-hidden="true"><span class="orb orb-1"></span><span class="orb orb-2"></span><span class="orb orb-3"></span></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <header class="nav" id="nav">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
+          <path d="M16 2 L28 9 V23 L16 30 L4 23 V9 Z" fill="none" stroke="url(#g1)" stroke-width="1.6"/>
+          <path d="M11 21 V12 L21 21 V12" fill="none" stroke="url(#g1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs><linearGradient id="g1" x1="0" y1="0" x2="32" y2="32"><stop offset="0" stop-color="#38f9d7"/><stop offset="1" stop-color="#7b6cff"/></linearGradient></defs>
+        </svg>
+      </span>
+      <span class="brand-name">NRI<span>Gateway</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="founder.html">Founder</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </header>
+
+  <!-- Page hero -->
+  <section class="page-hero">
+    <span class="eyebrow">✦ Who we are</span>
+    <h1>A single trusted partner for everything you can't do from abroad</h1>
+    <p>NRI Gateway is a service provider for the NRI community — bridging the gap between Non-Resident Indians and their roots.</p>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <figure class="media-banner">
+      <img src="images/family-sunset.jpg" alt="A large family holding hands together at sunset" loading="lazy" onerror="this.style.display='none'" />
+      <figcaption>
+        <h3>Family is the reason we exist</h3>
+        <p>No matter the ocean between you, we keep your loved ones close and cared for.</p>
+      </figcaption>
+    </figure>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          <strong>NRI Gateway is a service provider for the NRI community.</strong> We are committed to bridging
+          the gap between Non-Resident Indians and their roots. Leveraging decades of expertise, we have tailored
+          a spectrum of services that cater to the diverse needs of the global Indian community.
+        </p>
+        <p>
+          Our offerings span property, financial and legal assistance, immigration, parental care, education and
+          personalized concierge services — all designed to make the overseas experience seamless and connected.
+          Understanding the challenges faced by NRIs, we employ a network of seasoned professionals to deliver
+          solutions that are both efficient and empathetic.
+        </p>
+        <p>
+          In a world where geographical boundaries are becoming irrelevant, NRI Gateway stands as a trusted
+          partner, succeeding in forging real human connections. <em>Your needs, our solutions.</em>
+        </p>
+        <ul class="check-list">
+          <li>A network of seasoned, verified professionals</li>
+          <li>Efficient and empathetic, every step of the way</li>
+          <li>Real-time updates with a single point of contact</li>
+          <li>Your pathway to peace of mind and prosperity</li>
+        </ul>
+      </div>
+      <div class="about-card glass">
+        <div class="pulse-ring"></div>
+        <img class="about-card-img" src="images/care-hands-flower.jpg" alt="Open hands gently holding a flower" loading="lazy" onerror="this.style.display='none'" />
+        <h3>“We do truly care about your family.”</h3>
+        <p>That isn't a slogan — it's the standard we hold every service to. From a routine health check for your
+          parents to a critical document attestation, we treat your requests as if they were our own.</p>
+        <div class="about-signature">— Team NRI Gateway</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section class="section vision" id="vision">
+    <div class="vision-inner glass">
+      <span class="tag center">Our vision</span>
+      <h2 class="vision-quote">“Empowering Global Connections —<br /><span class="grad-text">Bridging Worlds, Enriching Lives.</span>”</h2>
+      <p>We aim to be the leading NRI services provider — the one gateway every Indian family abroad trusts to
+        care for what matters most back home.</p>
+    </div>
+  </section>
+
+  <!-- Reach -->
+  <section class="section" id="regions">
+    <div class="section-head">
+      <span class="tag">Our reach</span>
+      <h2>Rooted in Bengaluru, serving families across the USA</h2>
+      <p class="section-lead">Clients coordinating with us from communities across America:</p>
+    </div>
+    <figure class="media-banner">
+      <img src="images/india-taj-mahal.jpg" alt="The Taj Mahal in India at dawn" loading="lazy" onerror="this.style.display='none'" />
+      <figcaption>
+        <h3>A home base in India, a reach across the world</h3>
+        <p>From our office in Bengaluru, we handle every task on the ground — so you never have to fly back for paperwork.</p>
+      </figcaption>
+    </figure>
+    <div class="regions">
+      <span class="glass">Pahrump, Nevada</span>
+      <span class="glass">Gold Beach, Oregon</span>
+      <span class="glass">Garden City, Idaho</span>
+      <span class="glass">Fairview, Montana</span>
+      <span class="glass">Jackson, Wyoming</span>
+      <span class="glass">Greeley, Colorado</span>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section" id="reviews">
+    <div class="section-head">
+      <span class="tag">Kind words</span>
+      <h2>Families who trusted us — and would again</h2>
+    </div>
+    <div class="reviews-grid">
+      <blockquote class="glass">
+        <div class="stars">★★★★★</div>
+        <p>“Getting my parents' regular health checks organised from the US always felt impossible. NRI Gateway made
+          it effortless — quick turnaround, genuinely caring people, and fair rates.”</p>
+        <footer>— NRI client, Colorado</footer>
+      </blockquote>
+      <blockquote class="glass">
+        <div class="stars">★★★★★</div>
+        <p>“They handled our OCI documentation and my son's school fee payments in one go. Competitive pricing and
+          they kept me updated every step. Highly recommended.”</p>
+        <footer>— NRI client, Nevada</footer>
+      </blockquote>
+      <blockquote class="glass">
+        <div class="stars">★★★★★</div>
+        <p>“What stood out was how much they truly care. It never felt like a transaction — it felt like family
+          looking after family.”</p>
+        <footer>— NRI client, Oregon</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- CTA band -->
+  <section class="cta-band">
+    <div class="cta-inner glass">
+      <div class="pulse-ring"></div>
+      <h2>Ready when you are</h2>
+      <p>See everything we can do, or reach out with what's on your mind.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="services.html" class="btn btn-primary">Our services <span>→</span></a>
+        <a href="contact.html" class="btn btn-ghost">Contact us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-name">NRI<span>Gateway</span></span>
+        <p>Bridging worlds, enriching lives. A single trusted partner for property, immigration, parental care, documents, education, legal, travel and courier services — because we truly care about your family.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="founder.html">Founder</a>
+        <a href="services.html">Services</a>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="services.html">Property &amp; Parental</a>
+        <a href="services.html">Immigration &amp; Docs</a>
+        <a href="services.html">Legal &amp; Insurance</a>
+        <a href="services.html">Travel &amp; Courier</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="tel:+917348821565">+91 73488 21565</a>
+        <a href="tel:+14109883075">+1 (410) 988 3075</a>
+        <a href="contact.html">Bengaluru, India</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> NRI Gateway. All rights reserved.</span>
+      <span>Made with care for families across the world.</span>
+    </div>
+  </footer>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>
