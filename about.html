@@ -4,16 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — NRI Gateway</title>
-  <meta name="description" content="About NRI Gateway — a service provider for the NRI community, bridging Non-Resident Indians and their roots with efficient, empathetic solutions. Our vision, our reach, and what families say." />
+  <meta name="description" content="About NRI Gateway — a service provider for the NRI community, bridging Non-Resident Indians and their roots with efficient, empathetic solutions. Our story, our vision and where we work." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NRI Gateway" />
+  <meta property="og:title" content="About — NRI Gateway" />
+  <meta property="og:description" content="About NRI Gateway — a service provider for the NRI community, bridging Non-Resident Indians and their roots with efficient, empathetic solutions. Our story, our vision and where we work." />
+  <meta property="og:image" content="https://chandrusans.github.io/nrigateway/images/og-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="apple-touch-icon" href="favicon.svg" />
-  <meta name="theme-color" content="#05060f" />
+  <meta name="theme-color" content="#050f12" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="bg-grid" aria-hidden="true"></div>
   <div class="bg-orbs" aria-hidden="true"><span class="orb orb-1"></span><span class="orb orb-2"></span><span class="orb orb-3"></span></div>
   <canvas id="particles" aria-hidden="true"></canvas>
@@ -24,7 +31,7 @@
         <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
           <path d="M16 2 L28 9 V23 L16 30 L4 23 V9 Z" fill="none" stroke="url(#g1)" stroke-width="1.6"/>
           <path d="M11 21 V12 L21 21 V12" fill="none" stroke="url(#g1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <defs><linearGradient id="g1" x1="0" y1="0" x2="32" y2="32"><stop offset="0" stop-color="#38f9d7"/><stop offset="1" stop-color="#7b6cff"/></linearGradient></defs>
+          <defs><linearGradient id="g1" x1="0" y1="0" x2="32" y2="32"><stop offset="0" stop-color="#4be3a6"/><stop offset="1" stop-color="#5cc3f2"/></linearGradient></defs>
         </svg>
       </span>
       <span class="brand-name">NRI<span>Gateway</span></span>
@@ -36,11 +43,11 @@
       <a href="services.html">Services</a>
       <a href="contact.html" class="nav-cta">Contact</a>
     </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
   </header>
 
   <!-- Page hero -->
-  <section class="page-hero">
+  <section class="page-hero" id="main">
     <span class="eyebrow">✦ Who we are</span>
     <h1>A single trusted partner for everything you can't do from abroad</h1>
     <p>NRI Gateway is a service provider for the NRI community — bridging the gap between Non-Resident Indians and their roots.</p>
@@ -104,51 +111,24 @@
   <section class="section" id="regions">
     <div class="section-head">
       <span class="tag">Our reach</span>
-      <h2>Rooted in Bengaluru, serving families across the USA</h2>
-      <p class="section-lead">Clients coordinating with us from communities across America:</p>
+      <h2>Rooted in Bengaluru, present across the USA</h2>
+      <p class="section-lead">We are in India and the USA.</p>
     </div>
     <figure class="media-banner">
-      <img src="images/india-taj-mahal.jpg" alt="The Taj Mahal in India at dawn" loading="lazy" onerror="this.style.display='none'" />
+      <img src="images/bengaluru-vidhana-soudha.jpg" alt="Vidhana Soudha in Bengaluru under a blue sky" loading="lazy" onerror="this.style.display='none'" />
       <figcaption>
         <h3>A home base in India, a reach across the world</h3>
         <p>From our office in Bengaluru, we handle every task on the ground — so you never have to fly back for paperwork.</p>
       </figcaption>
     </figure>
     <div class="regions">
+      <span class="glass home-base">Bengaluru, India — home base</span>
       <span class="glass">Pahrump, Nevada</span>
       <span class="glass">Gold Beach, Oregon</span>
       <span class="glass">Garden City, Idaho</span>
       <span class="glass">Fairview, Montana</span>
       <span class="glass">Jackson, Wyoming</span>
       <span class="glass">Greeley, Colorado</span>
-    </div>
-  </section>
-
-  <!-- Reviews -->
-  <section class="section" id="reviews">
-    <div class="section-head">
-      <span class="tag">Kind words</span>
-      <h2>Families who trusted us — and would again</h2>
-    </div>
-    <div class="reviews-grid">
-      <blockquote class="glass">
-        <div class="stars">★★★★★</div>
-        <p>“Getting my parents' regular health checks organised from the US always felt impossible. NRI Gateway made
-          it effortless — quick turnaround, genuinely caring people, and fair rates.”</p>
-        <footer>— NRI client, Colorado</footer>
-      </blockquote>
-      <blockquote class="glass">
-        <div class="stars">★★★★★</div>
-        <p>“They handled our OCI documentation and my son's school fee payments in one go. Competitive pricing and
-          they kept me updated every step. Highly recommended.”</p>
-        <footer>— NRI client, Nevada</footer>
-      </blockquote>
-      <blockquote class="glass">
-        <div class="stars">★★★★★</div>
-        <p>“What stood out was how much they truly care. It never felt like a transaction — it felt like family
-          looking after family.”</p>
-        <footer>— NRI client, Oregon</footer>
-      </blockquote>
     </div>
   </section>
 
@@ -199,6 +179,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>

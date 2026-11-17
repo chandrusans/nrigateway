@@ -14,21 +14,27 @@ if (nav) {
 const toggle = document.getElementById("navToggle");
 const links = document.getElementById("navLinks");
 if (toggle && links) {
-  toggle.addEventListener("click", () => {
-    toggle.classList.toggle("open");
-    links.classList.toggle("open");
+  const setMenu = (open) => {
+    toggle.classList.toggle("open", open);
+    links.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+  };
+  toggle.addEventListener("click", () => setMenu(!links.classList.contains("open")));
+  links.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && links.classList.contains("open")) {
+      setMenu(false);
+      toggle.focus();
+    }
   });
-  links.querySelectorAll("a").forEach((a) =>
-    a.addEventListener("click", () => {
-      toggle.classList.remove("open");
-      links.classList.remove("open");
-    })
-  );
+  document.addEventListener("click", (e) => {
+    if (links.classList.contains("open") && !links.contains(e.target) && !toggle.contains(e.target)) setMenu(false);
+  });
 }
 
 // ---------- Reveal on scroll ----------
 const revealEls = document.querySelectorAll(
-  ".section-head, .page-hero, .about-grid, .founder-grid, .svc-card, .svc-preview a, .step, .vision-inner, .regions span, .reviews-grid blockquote, .contact-info, .contact-form, .cta-inner"
+  ".section-head, .page-hero, .about-grid, .founder-grid, .svc-card, .svc-preview a, .step, .vision-inner, .regions span, .contact-info, .contact-form, .cta-inner"
 );
 revealEls.forEach((el) => el.classList.add("reveal"));
 const io = new IntersectionObserver(
@@ -46,6 +52,7 @@ const io = new IntersectionObserver(
 revealEls.forEach((el) => io.observe(el));
 
 // ---------- Count-up stats ----------
+// The markup holds the final values, so the numbers are right even without JavaScript.
 const counters = document.querySelectorAll(".hero-stats b[data-count]");
 const countObserver = new IntersectionObserver(
   (entries) => {
@@ -53,12 +60,13 @@ const countObserver = new IntersectionObserver(
       if (!e.isIntersecting) return;
       const el = e.target;
       const target = +el.dataset.count;
+      const suffix = el.dataset.suffix || "";
       const dur = 1400;
       const start = performance.now();
       const step = (now) => {
         const p = Math.min((now - start) / dur, 1);
         const ease = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.round(target * ease) + (p === 1 && target >= 100 ? "+" : "");
+        el.textContent = Math.round(target * ease) + (p === 1 ? suffix : "");
         if (p < 1) requestAnimationFrame(step);
       };
       requestAnimationFrame(step);
@@ -67,22 +75,21 @@ const countObserver = new IntersectionObserver(
   },
   { threshold: 0.5 }
 );
-counters.forEach((c) => countObserver.observe(c));
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  counters.forEach((c) => countObserver.observe(c));
+}
 
 // ---------- Contact form ----------
 const form = document.getElementById("contactForm");
 const note = document.getElementById("formNote");
 const submitBtn = form ? form.querySelector("button[type=submit]") : null;
-
-// Fallback inbox used when the Formspree endpoint hasn't been configured yet.
-const FALLBACK_EMAIL = "info@nrigateway.in";
+const CALL_US =
+  'Please call us on <a href="tel:+917348821565">+91 73488 21565</a> (India) or <a href="tel:+14109883075">+1 (410) 988 3075</a> (USA).';
 
 if (form) form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const name = form.name.value.trim();
   const email = form.email.value.trim();
-  const phone = form.phone.value.trim();
-  const service = form.service.value;
   const message = form.message.value.trim();
   const agree = form.agree.checked;
   note.className = "form-note";
@@ -98,7 +105,7 @@ if (form) form.addEventListener("submit", async (e) => {
     return;
   }
   if (!agree) {
-    note.textContent = "Please agree to the privacy policy to continue.";
+    note.textContent = "Please tick the box so we can contact you about your request.";
     note.classList.add("err");
     return;
   }
@@ -106,19 +113,14 @@ if (form) form.addEventListener("submit", async (e) => {
   const action = form.getAttribute("action") || "";
   const configured = action.includes("formspree.io") && !action.includes("YOUR_FORM_ID");
 
-  // If Formspree isn't set up yet, fall back to opening the user's email client.
+  // Until a form endpoint is connected, say so plainly rather than pretending the message was sent.
   if (!configured) {
-    const subject = encodeURIComponent(`NRI Gateway enquiry — ${service || "General"}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nPhone: ${phone || "-"}\nService: ${service || "-"}\n\n${message}`
-    );
-    window.location.href = `mailto:${FALLBACK_EMAIL}?subject=${subject}&body=${body}`;
-    note.textContent = "Opening your email app to send the message…";
-    note.classList.add("ok");
+    note.innerHTML = "Our online form isn't connected yet. " + CALL_US;
+    note.classList.add("err");
     return;
   }
 
-  // Submit to Formspree via fetch (AJAX) so the visitor stays on the page.
+  // Submit to Formspree via fetch so the visitor stays on the page.
   const original = submitBtn.innerHTML;
   submitBtn.disabled = true;
   submitBtn.innerHTML = "Sending…";
@@ -128,31 +130,17 @@ if (form) form.addEventListener("submit", async (e) => {
       headers: { Accept: "application/json" },
       body: new FormData(form),
     });
-    if (res.ok) {
-      note.textContent = `Thank you, ${name}! Your message has been sent — we'll be in touch shortly.`;
-      note.classList.add("ok");
-      form.reset();
-    } else {
-      throw new Error("Bad response");
-    }
+    if (!res.ok) throw new Error("Bad response");
+    note.textContent = `Thank you, ${name}! Your message has been sent — we'll be in touch shortly.`;
+    note.classList.add("ok");
+    form.reset();
   } catch (err) {
-    note.textContent = "Sorry, something went wrong. Please call us or email info@nrigateway.in.";
+    note.innerHTML = "Sorry, your message couldn't be sent. " + CALL_US;
     note.classList.add("err");
   } finally {
     submitBtn.disabled = false;
     submitBtn.innerHTML = original;
   }
-});
-
-// ---------- Card tilt ----------
-document.querySelectorAll("[data-tilt]").forEach((card) => {
-  card.addEventListener("mousemove", (e) => {
-    const r = card.getBoundingClientRect();
-    const x = (e.clientX - r.left) / r.width - 0.5;
-    const y = (e.clientY - r.top) / r.height - 0.5;
-    card.style.transform = `translateY(-8px) rotateX(${-y * 6}deg) rotateY(${x * 6}deg)`;
-  });
-  card.addEventListener("mouseleave", () => (card.style.transform = ""));
 });
 
 // ---------- Particle canvas ----------
@@ -161,17 +149,17 @@ document.querySelectorAll("[data-tilt]").forEach((card) => {
   if (!canvas || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   const ctx = canvas.getContext("2d");
   let w, h, particles, raf;
-  const COLORS = ["#38f9d7", "#7b6cff", "#ff5bb4"];
+  const COLORS = ["#4be3a6", "#5cc3f2", "#f1cf8e"];
   const resize = () => {
     w = canvas.width = window.innerWidth;
     h = canvas.height = window.innerHeight;
-    const count = Math.min(70, Math.floor(w / 22));
+    const count = Math.min(44, Math.floor(w / 30));
     particles = Array.from({ length: count }, () => ({
       x: Math.random() * w,
       y: Math.random() * h,
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.3,
-      r: Math.random() * 1.6 + 0.4,
+      vx: (Math.random() - 0.5) * 0.25,
+      vy: (Math.random() - 0.5) * 0.25,
+      r: Math.random() * 1.4 + 0.4,
       c: COLORS[Math.floor(Math.random() * COLORS.length)],
     }));
   };
@@ -185,17 +173,16 @@ document.querySelectorAll("[data-tilt]").forEach((card) => {
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
       ctx.fillStyle = p.c;
-      ctx.globalAlpha = 0.6;
+      ctx.globalAlpha = 0.45;
       ctx.fill();
       for (let j = i + 1; j < particles.length; j++) {
         const q = particles[j];
-        const dx = p.x - q.x, dy = p.y - q.y;
-        const dist = Math.hypot(dx, dy);
+        const dist = Math.hypot(p.x - q.x, p.y - q.y);
         if (dist < 130) {
           ctx.beginPath();
           ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
           ctx.strokeStyle = p.c;
-          ctx.globalAlpha = (1 - dist / 130) * 0.15;
+          ctx.globalAlpha = (1 - dist / 130) * 0.1;
           ctx.lineWidth = 0.6;
           ctx.stroke();
         }
