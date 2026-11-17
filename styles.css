@@ -241,6 +241,30 @@ img, iframe { max-width: 100%; }
 .footer-col a:hover { color: var(--c1); }
 .footer-bottom { max-width: var(--maxw); margin: 40px auto 0; padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; color: var(--muted); font-size: 0.85rem; }
 
+/* ---------- Founder ---------- */
+.founder-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 28px; align-items: start; }
+.founder-card { padding: 38px 34px; text-align: center; position: relative; overflow: hidden; }
+.founder-avatar {
+  width: 96px; height: 96px; margin: 0 auto 18px; border-radius: 50%;
+  display: grid; place-items: center; font-family: "Space Grotesk"; font-weight: 700; font-size: 2rem;
+  color: #05060f; background: var(--grad); box-shadow: 0 12px 40px -10px rgba(123,108,255,0.6);
+  letter-spacing: 0.02em;
+}
+.founder-card h3 { font-size: 1.5rem; margin-bottom: 4px; }
+.founder-role { color: var(--c1); font-weight: 600; margin-bottom: 26px; font-size: 0.95rem; }
+.founder-block { text-align: left; margin-bottom: 22px; }
+.founder-block h4 { font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c2); margin-bottom: 12px; }
+.founder-block ul { list-style: none; display: grid; gap: 10px; }
+.founder-block ul li { position: relative; padding-left: 22px; font-size: 0.94rem; color: #c6cef0; }
+.founder-block ul li::before { content: "◆"; position: absolute; left: 0; color: var(--c1); font-size: 0.7rem; top: 3px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chips span { padding: 8px 15px; border-radius: 100px; font-size: 0.85rem; color: #d4dbf5; background: rgba(123,108,255,0.12); border: 1px solid var(--glass-brd); }
+.founder-side { display: grid; gap: 24px; }
+.founder-side .media-banner { margin-bottom: 0; aspect-ratio: 16 / 7; }
+.founder-why { padding: 30px 32px; }
+.founder-why h4 { font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c2); margin-bottom: 14px; }
+.founder-why p { color: #d4dbf5; font-size: 1.05rem; line-height: 1.7; font-style: italic; }
+
 /* ---------- Media / images ---------- */
 .media-banner {
   position: relative; border-radius: var(--radius); overflow: hidden; margin-bottom: 48px;
@@ -273,7 +297,7 @@ img, iframe { max-width: 100%; }
   .nav-links.open { transform: translateX(0); }
   .nav-links a { width: 100%; font-size: 1.1rem; }
   .nav-toggle { display: flex; z-index: 101; }
-  .about-grid, .contact-grid { grid-template-columns: 1fr; }
+  .about-grid, .contact-grid, .founder-grid { grid-template-columns: 1fr; }
   .services-grid, .reviews-grid { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr 1fr; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
